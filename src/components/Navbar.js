@@ -26,7 +26,7 @@ const Navbar = (props) => {
                             <Link className={`nav-link ${location.pathname==="/"?"active":''}`} aria-current="page" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className={`nav-link ${location.pathname==="/About"?"active":""}`} to="/About">About</Link></li>
+                        <Link className={`nav-link ${location.pathname==="/About"?"active":""}`} to="/about">About</Link></li>
                         <Link className={`nav-link ${location.pathname==="/business"?"active":""}`} to="/business">Business</Link>
                         <Link className={`nav-link ${location.pathname==="/entertainment"?"active":""}`} to="/entertainment">Entertainment</Link>
                         <Link className={`nav-link ${location.pathname==="/health"?"active":""}`} to="/health">Health</Link>
@@ -34,6 +34,7 @@ const Navbar = (props) => {
                         <Link className={`nav-link ${location.pathname==="/sports"?"active":""}`} to="/sports">Sports</Link>
                         <Link className={`nav-link ${location.pathname==="/technology"?"active":""}`} to="/technology">Technology</Link>
                         <Link className={`nav-link ${location.pathname==="/article"?"active":""}`} to="/article">Write An Article</Link>
+                        <Link className={`nav-link ${location.pathname==="/article_news"?"active":""}`} to="/article_news">Latest Article</Link>
                     </ul>
                     </div>
                     <div className={`form-check form-switch  text-${props.mode === 'light' ? 'dark' : 'light'}`}>

@@ -9,21 +9,36 @@ const NoteState = (props) => {
     const notesInitial = [ ]
     const [notes, setNotes] = useState(notesInitial);  
     
-    // Get all notes
-    const getNotes = async () =>{
+    // Get all news
+    const getNews = async () =>{
       // Todo api call
         // Api call
-    const response = await fetch(`${host}/api/notes/fetchallnotes`, {
+    const response = await fetch(`${host}/api/notes/fetchallnews`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        'auth-token': localStorage.getItem('token')
+        'Content-Type': 'application/json'
       },
     });
     const json = await response.json()
     console.log(json)
     setNotes(json)
   }
+
+  // Get all notes
+  const getNotes = async () =>{
+    // Todo api call
+      // Api call
+  const response = await fetch(`${host}/api/notes/fetchallnotes`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'auth-token': localStorage.getItem('token')
+    },
+  });
+  const json = await response.json()
+  console.log(json)
+  setNotes(json)
+}
 
 
     // Add note
@@ -95,7 +110,7 @@ const NoteState = (props) => {
 
 
     return (
-        <NoteContext.Provider value={{notes , addNote , deleteNote, editNote, getNotes}}>
+        <NoteContext.Provider value={{notes , addNote , deleteNote, editNote, getNotes, getNews}}>
             {props.children}
         </NoteContext.Provider>
     )
